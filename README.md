@@ -89,3 +89,102 @@ Detected anomalies are exposed via a dedicated endpoint.
 
 ## Project Structure
 
+app/   
+├── main.py # Application entry point  
+├── models.py # Pydantic models  
+├── routes.py # API endpoints  
+├── analytics.py # Statistical and anomaly logic  
+└── utils.py # IP validation and helpers  
+
+tests/ # Unit tests  
+Dockerfile  
+requirements.txt  
+README.md  
+
+
+---
+
+## API Endpoints
+
+### Devices
+POST /devices  
+GET /devices  
+GET /devices/{device_id}  
+
+---
+
+### Network Events
+
+POST /events  
+GET /events  
+GET /events?device_id={id} 
+
+
+---
+
+### Statistics
+
+GET /stats  
+GET /stats/{device_id}  
+
+---
+
+### Anomalies
+
+GET /anomalies  
+
+---
+
+## Example Analytical Functions
+
+The project includes standalone analytical utilities:
+
+- Identify the top data-consuming device  
+- Calculate most common destination ports  
+- Detect traffic bursts  
+- Filter events by CIDR subnet  
+
+These functions demonstrate data aggregation, grouping, and time-series reasoning.
+
+---
+
+## Optional Enhancements
+
+- Dockerised deployment  
+- External GeoIP lookups  
+- Unit test coverage  
+- Persistent storage  
+- Authentication and rate limiting  
+
+---
+
+## Future Improvements
+
+- Replace in-memory storage with PostgreSQL  
+- Introduce async background processing  
+- Implement authentication (JWT)  
+- Add metrics via Prometheus  
+- Integrate ML-based anomaly detection  
+- Improve scalability with message queues  
+
+---
+
+## Learning Objectives
+
+This project demonstrates:
+
+- REST API design principles  
+- Production-style Python structure  
+- Data validation and error handling  
+- Networking fundamentals  
+- Behavioural anomaly detection  
+- Analytical problem-solving  
+- Dockerisation  
+- Test-driven development  
+
+---
+
+## Author
+
+Kit Bispham
+
